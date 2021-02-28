@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "local mais próximo",
+      "latitude": -23.642554619533417,
+      "longitude": -46.576968813565756,
+      "status": true
+    },
+    {
+      "id": 2,
+      "name": "local mais próximo",
+      "latitude": -23.639090,
+      "longitude": -46.566891,
+      "status": true
+    },
+    {
+      "id": 3,
+      "name": "local mais próximo",
+      "latitude": -23.632980,
+      "longitude": -46.596912,
+      "status": true
+    },
+    {
+      "id": 4,
+      "name": "local mais próximo",
+      "latitude": -23.634685,
+      "longitude": -46.579516,
+      "status": true
+    },
+    {
+      "id": 5,
+      "name": "local mais próximo",
+      "latitude": -23.647293,
+      "longitude": -46.587305,
+      "status": true
+    },
+    {
+      "id": 6,
+      "name": "local mais próximo",
+      "latitude": -23.649959,
+      "longitude": -46.567162,
+      "status": true
+    }
+  ]
+}
