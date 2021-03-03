@@ -12,7 +12,7 @@ import mapMarkerImg from '../../images/logo-centauro.svg';
 import mapIconHome from '../../utils/mapIconHome';
 import mapIconShop from '../../utils/mapIconShop';
 
-interface GeoData {
+export interface GeoData {
   id: number;
   latitude: number;
   longitude: number;
@@ -27,7 +27,7 @@ const CalculateDistancesMap: React.FC = () => {
   const [usersGeo, setUsersGeo] = useState<GeoData[]>([]);
   const [filteredUsers, setFilteredUsers] = useState<GeoData[]>([]);
   const [reloadPage, setReloadPage] = useState(true);
-  const handleClick = () => setReloadPage(true);
+  const handleClick = (): void => setReloadPage(true);
 
   const generateMarkers = useCallback((data: GeoData[]) => {
     const indexClientAddress = Math.floor(Math.random() * data.length);
@@ -36,21 +36,20 @@ const CalculateDistancesMap: React.FC = () => {
       .map(({ id, name, latitude, longitude }, index) => {
         return {
           closeness: Math.sqrt(
-            Math.pow(latitude - data[indexClientAddress].latitude, 2) +
-            Math.pow(longitude - data[indexClientAddress].longitude, 2)
+            (latitude - data[indexClientAddress].latitude) ** 2 +
+              (longitude - data[indexClientAddress].longitude) ** 2,
           ),
           id,
           name,
           latitude,
           longitude,
-          isShop: indexClientAddress === index ? true : false,
+          isShop: indexClientAddress === index,
         };
-    })
-    .sort((a, b) => +(a.closeness) - (+b.closeness));
+      })
+      .sort((a, b) => +a.closeness - +b.closeness);
 
     setFilteredUsers(users);
-
-  }, [],);
+  }, []);
 
   useEffect(() => {
     if (calculateDistance) {
@@ -93,7 +92,9 @@ const CalculateDistancesMap: React.FC = () => {
         </header>
 
         <footer>
-          <strong>Clique no botão <FiRefreshCcw size={24} color="#FFF" /></strong>
+          <strong>
+            Clique no botão <FiRefreshCcw size={24} color="#FFF" />
+          </strong>
           <span>para atualizar o cenário</span>
         </footer>
       </aside>
@@ -107,29 +108,31 @@ const CalculateDistancesMap: React.FC = () => {
           <TileLayer
             url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
           />
-          {filteredUsers.map(({ id, isShop, latitude, longitude, name }, index) => {
-            return (
-              <Marker
-                key={id}
-                icon={isShop === true ? mapIconHome : mapIconShop}
-                position={[latitude, longitude]}
-              >
-                <Tooltip
-                  direction="bottom"
-                  offset={[7, 4]}
-                  opacity={1}
-                  className={'tooltip-title'}
-                  permanent
+          {filteredUsers.map(
+            ({ id, isShop, latitude, longitude, name }, index) => {
+              return (
+                <Marker
+                  key={id}
+                  icon={isShop ? mapIconHome : mapIconShop}
+                  position={[latitude, longitude]}
                 >
-                  {isShop === true ? `Endereço do cliente` : `${index}º ${name}`}
-                </Tooltip>
-              </Marker>
-            );
-          })}
+                  <Tooltip
+                    direction="bottom"
+                    offset={[7, 4]}
+                    opacity={1}
+                    className="tooltip-title"
+                    permanent
+                  >
+                    {isShop ? `Endereço do cliente` : `${index}º ${name}`}
+                  </Tooltip>
+                </Marker>
+              );
+            },
+          )}
         </Map>
       </MapContainer>
 
-      <RefreshButton onClick={handleClick}>
+      <RefreshButton onClick={handleClick} aria-label="refresh-map">
         <FiRefreshCcw size={32} color="#FFF" />
       </RefreshButton>
     </Container>
