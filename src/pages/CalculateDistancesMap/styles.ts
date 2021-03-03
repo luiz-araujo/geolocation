@@ -7,7 +7,7 @@ export const Container = styled.div`
   width: 100vw;
 
   aside {
-    background: linear-gradient(329.54deg, #7C051F 0%, #BE0F34 100%);
+    background: linear-gradient(329.54deg, #7c051f 0%, #be0f34 100%);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -49,7 +49,7 @@ export const Container = styled.div`
 
 export const RefreshButton = styled.button`
   align-items: center;
-  background-color: #BE0F34;
+  background-color: #be0f34;
   border: 0;
   border-radius: 20px;
   bottom: 40px;
@@ -63,7 +63,7 @@ export const RefreshButton = styled.button`
   z-index: 2;
 
   &:hover {
-    background-color: #7C051F;
+    background-color: #7c051f;
   }
 `;
 
@@ -77,11 +77,10 @@ export const MapContainer = styled.div`
   }
 
   .tooltip-title {
-      background: rgba(255, 255, 255, 0.8);
-      border-radius: 7px;
-      box-shadow: none;
-      color: #2D3E50;
-      font: 700 14px Nunito, sans-serif;
-    }
-
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 7px;
+    box-shadow: none;
+    color: #2d3e50;
+    font: 700 14px Nunito, sans-serif;
+  }
 `;

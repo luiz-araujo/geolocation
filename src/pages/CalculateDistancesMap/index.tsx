@@ -30,14 +30,19 @@ const CalculateDistancesMap: React.FC = () => {
   const handleClick = (): void => setReloadPage(true);
 
   const generateMarkers = useCallback((data: GeoData[]) => {
-    const indexClientAddress = Math.floor(Math.random() * data.length);
+    const countStores = 4;
+    const nearestStores = data
+      .sort(() => (Math.random() > 0.5 ? 1 : -1))
+      .slice(0, countStores);
 
-    const users = data
+    const indexClientAddress = Math.floor(Math.random() * nearestStores.length);
+
+    const users = nearestStores
       .map(({ id, name, latitude, longitude }, index) => {
         return {
           closeness: Math.sqrt(
-            (latitude - data[indexClientAddress].latitude) ** 2 +
-              (longitude - data[indexClientAddress].longitude) ** 2,
+            (latitude - nearestStores[indexClientAddress].latitude) ** 2 +
+              (longitude - nearestStores[indexClientAddress].longitude) ** 2,
           ),
           id,
           name,
