@@ -14,13 +14,13 @@
 </p>
 
 <p align="center">
-  <a href="#geolocation">Geolocation </a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#how-to-run">How to run</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#built-with">Built with</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#how-to-contribute">How to contribute</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#license">License</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#geolocation">Geolocation </a>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="#project">Project</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="#layout">Layout</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="#how-to-run">How to run</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="#built-with">Built with</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="#how-to-contribute">How to contribute</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="#license">License</a>&nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="#get-in-touch">Get in touch!</a>
 </p>
 
